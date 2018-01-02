@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+#服务注册
+      defaultZone: http://localhost:1000/eureka/
+server:
+  port: 1501
+spring:
+  application:
+    name: user-service
+  zipkin:
+#指向zipkin server地址
+    base-url: http://localhost:1500
+  sleuth:
+    sampler:
+#spring.zipkin.sleuth.sampler.percentage=1.0,即100%的概率将链路的数据上传给Zipkin Server，在默认的情况下，该值为0.1
+      percentage: 1.0

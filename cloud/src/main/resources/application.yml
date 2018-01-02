@@ -1,0 +1,15 @@
+#eureka是一个高可用的组件，它没有后端缓存，
+#每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成），
+#在默认情况下eureka server也是一个eureka client ,必须要指定一个server
+eureka:
+  client:
+    serviceUrl:
+    #注明自己的服务注册中心地址
+      defaultZone: http://localhost:1000/eureka/
+server:
+#自身的端口号
+  port: 1001
+#服务与服务之间相互调用一般根据这个name
+spring:
+  application:
+    name: service-cloud
